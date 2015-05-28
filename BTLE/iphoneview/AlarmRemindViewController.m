@@ -2,8 +2,8 @@
 //  AlarmRemindViewController.m
 //  BTLE
 //
-//  Created by 夏 伟 on 14-2-12.
-//  Copyright (c) 2014年 夏 伟. All rights reserved.
+//  Created by zks on 14-2-12.
+//  Copyright (c) 2014年 zks. All rights reserved.
 //
 
 #import "AlarmRemindViewController.h"

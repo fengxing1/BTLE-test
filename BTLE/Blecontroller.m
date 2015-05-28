@@ -53,10 +53,14 @@ NSString *DeviceInfoNotification = @"DeviceInfoNotification";
 +(Blecontroller *)shareBlecontroller
 {
     static Blecontroller *blecontroller = nil;
-    if(blecontroller == nil)
-    {
-        blecontroller = [[Blecontroller alloc]init];
-    }
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        blecontroller = [[Blecontroller alloc] init];
+    });
+//    if(blecontroller == nil)
+//    {
+//        blecontroller = [[Blecontroller alloc]init];
+//    }
     return blecontroller;
 }
 
