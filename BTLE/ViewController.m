@@ -95,6 +95,9 @@
 -(void)startStepNumNotify
 {
     Blecontroller *blecontroller = [Blecontroller shareBlecontroller];
+    //添加两个特征码
+    blecontroller.PhoneSendData_UUID = @"FFF6";
+    blecontroller.PhoneRecData_UUID = @"FFF7";
     [blecontroller setDeviceName:@"EP60B4"];
     [blecontroller setService_UUID:@"1814"];
     [blecontroller setCharacteristec_UUID:@"ffa6"];
@@ -549,7 +552,7 @@
 //    mydistanceSwitch.frame = frame;
 //    [self.view addSubview:mydistanceSwitch];
     
-    [self setProgress:10000 havegot:0];
+    [self setProgress:10000 havegot:500];
 }
 
 -(IBAction)backBtnPressed:(id)sender

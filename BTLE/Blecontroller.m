@@ -403,6 +403,9 @@ NSString *DeviceInfoNotification = @"DeviceInfoNotification";
         
         NSLog(@"特征:%@",characteristic.UUID);
         
+        if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:_PhoneRecData_UUID]]) {
+            NSLog(@"手机接受数据");
+        }
         // And check if it's the right one
         if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:TRANSFER_CHARACTERISTIC_UUID]]) {
             
@@ -422,6 +425,7 @@ NSString *DeviceInfoNotification = @"DeviceInfoNotification";
             }
             if([lol length] >10)
             {
+                //收到数据后这里才是真的要处理数据的
                 NSLog(@"Coooooooooooooooooooooooooooooool~");
                 NSLog(@"Cooooooooooooooooooooooooooooooool~");
             }
@@ -549,7 +553,7 @@ NSString *DeviceInfoNotification = @"DeviceInfoNotification";
     {
         NSLog(@"收到%d字节：%d",[lol length],byte[i]);
     }
-    
+    //接收到的数据
     if([characteristic.UUID isEqual:[CBUUID UUIDWithString:TRANSFER_CHARACTERISTIC_UUID]]){
         [self.data setLength:0];
         [self.data appendData:lol];

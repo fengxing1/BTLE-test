@@ -40,6 +40,10 @@ extern NSString *DeviceInfoNotification;
 
 //设备名
 @property (strong, nonatomic) NSString *DEVICE_NAME;
+//TX UUID：0xFFF6  手机发送数据给计步器，长度为16字节
+@property (nonatomic,strong) NSString *PhoneSendData_UUID;
+//RX UUID：0xFFF7  计步器发送数据给手机，长度为16字节
+@property (nonatomic,strong) NSString *PhoneRecData_UUID;
 
 //当天步数服务及特征
 @property (strong, nonatomic) NSString *TRANSFER_SERVICE_UUID;
